@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         String userId = mAuth.getCurrentUser().getUid();
-                        User user = new User(userId, name, email, phone);
+                        User user = new User(userId, name, email, phone, "user");
                         
                         db.collection("users").document(userId).set(user)
                                 .addOnSuccessListener(aVoid -> {

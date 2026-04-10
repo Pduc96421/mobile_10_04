@@ -73,7 +73,10 @@ public class BookingActivity extends AppCompatActivity {
                 movie.getId() + "_show01", // Mock showtime
                 mockSeats,
                 totalAmount,
-                System.currentTimeMillis()
+                System.currentTimeMillis(),
+                movie.getTitle(),
+                String.join(", ", mockSeats),
+                "2026-04-10" // Mock date
         );
 
         db.collection("tickets").document(ticket.getId())
